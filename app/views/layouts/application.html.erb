@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firstapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- New Header -->
+<header class = "navbar navbar-fixed-top navbar-inverse">
+	<div class = "navbar-inner">
+		<div class = "container">
+			<%= link_to "FirstApp", "#", id:"lofo" %>
+		</div>
+	</div>
+</header>
+
+<!-- Content wrap in container -->
+<div class = "container">
+	<%= yield %>
+	<!-- New Footer -->
+	<footer class = "footer">
+		<small>
+			<a href = "codecamp.io">Code Camp</a>
+		</small>
+	</footer>
+
+	<!-- Debugging footer -->
+	<%= debug(params) if Rails.env.development? %>
+</div>
+
+</body>
+</html>
